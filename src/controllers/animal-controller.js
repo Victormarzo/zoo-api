@@ -12,7 +12,7 @@ export async function listarAnimais(req,res){
         return res.status(500).json({
             message:'Erro interno do servidor ao listar animais.',
             error:error.message
-        })
+        });
     }
 }
 
@@ -23,7 +23,7 @@ export async function adicionarAnimal(req,res){
         return res.status(400).json({
             message:"Falha na validação dos dados do animal",
             errors: errors
-        })
+        });
     }
 
     const {name, description, birth_date, species, habitat, country_origin} = value
@@ -32,19 +32,17 @@ export async function adicionarAnimal(req,res){
             INSERT INTO animais (name, description, birth_date, species, habitat, country_origin)
             VALUES ($1, $2, $3, $4, $5, $6)
             RETURNING *;`;
-        const values = [name, description, birth_date, species, habitat, country_origin]
-        const result = await query(sql,values)
-        console.log('SUCESSO')
+        const values = [name, description, birth_date, species, habitat, country_origin];
+        const result = await query(sql, values);
         return res.status(201).json({
-            message: 'Animal cadastrado com sucesso!',
+            message: "Animal cadastrado com sucesso!",
             animal: result.rows[0]});
 
     } catch (error) {
         console.error('Erro ao cadastrar animal:',error);
         return res.status(500).json({
-            message:'Erro interno do servidor ao cadastrar animal.',
+            message:"Erro interno do servidor ao cadastrar animal.",
             error:error.message
-        }) 
+        }) ;
     }
-    console.log('SUCESSO')
 }
