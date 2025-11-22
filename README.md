@@ -1,4 +1,4 @@
-#  Zoo Management API (API de Gerenciamento de Zoológico)
+#  Zoo API (API de Gerenciamento de Zoológico)
 
 Este é o backend do sistema de gerenciamento de zoológico, desenvolvido com Node.js (Express) e PostgreSQL.
 
