@@ -1,6 +1,6 @@
 #  Zoo API (API de Gerenciamento de Zoológico)
 
-Este é o backend do sistema de gerenciamento de zoológico, desenvolvido com Node.js (Express) e PostgreSQL.
+Backend do sistema de gerenciamento de zoológico, desenvolvido com Node.js (Express) e PostgreSQL.
 
 O ambiente de desenvolvimento utiliza Docker Compose para orquestrar o banco de dados.
 
