@@ -1,0 +1,26 @@
+{
+  "name": "zoo-api",
+  "version": "1.0.0",
+  "description": "API para gerenciamento de Zoológico.",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "nodemon src/app.js",
+    "db:up": "docker-compose up -d --build",
+    "db:down": "docker-compose down",
+    "db:setup": "echo 'Execute o script SQL. O schema.sql será executado automaticamente na primeira inicialização do container via docker-compose.yml. Se precisar se conectar manualmente, use:' && echo 'docker exec -it zoo_postgres_db psql -U user_zoo -d zoo_management'",
+    "dev": "npm run db:up && npm start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "pg": "^8.16.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
