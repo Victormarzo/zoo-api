@@ -24,10 +24,10 @@ Todas as credenciais de banco de dados e portas são lidas do arquivo .env (que 
 
 Crie um arquivo chamado .env na raiz do projeto com o seguinte conteúdo:
 ```bash
-## Configurações do Aplicativo (Node.js)
+#Configurações do Aplicativo (Node.js)
 APP_PORT=5000
 
-## Configurações do Banco de Dados (PostgreSQL)
+# Configurações do Banco de Dados (PostgreSQL)
 DB_USER=postgres
 DB_PASSWORD=zoo123
 DB_NAME=zoo_management
@@ -93,25 +93,12 @@ Resposta Esperada:
 
 ### Scripts Úteis (package.json)
 
-Comando
-
-Descrição
-```bash
-npm start
-```
-Inicia o servidor Node.js (Express).
-```bash
-npm run db:up
-```
-Sobe o container PostgreSQL via Docker Compose.
-```bash
-npm run db:down
-```
-Derruba o container PostgreSQL.
-```bash
-npm run dev
-```
-Executa db:up e npm start em sequência (requer que o npm start rode em outro terminal se você usa um processo de dev mais sofisticado).
+| Comando |Descrição|
+| ----------| ----- |
+|npm start|Inicia o servidor Node.js (Express).|
+|npm run db:up|Sobe o container PostgreSQL via Docker Compose.|
+|npm run db:down|Derruba o container PostgreSQL.|
+|npm run dev|Executa db:up e npm start em sequência (requer que o npm start rode em outro terminal se você usa um processo de dev mais sofisticado).|
 
 
 
