@@ -16,10 +16,10 @@ const pool = new pg.Pool(config);
 async function testConnection() {
     try {
         await pool.query('SELECT 1 + 1 AS result');
-        console.log("Database connection successful.");
+        console.log('Database connection successful.');
         return { success: true };
     } catch (error) {
-        console.error("Database connection test failed:", error); 
+        console.error('Database connection test failed:', error); 
         return { success: false, message: error.message };
     }
 }

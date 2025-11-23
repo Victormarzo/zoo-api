@@ -1,4 +1,4 @@
-import joi from "joi";
+import joi from 'joi';
 
 export const newAnimalSchema = joi.object({
     name:joi.string().trim().min(2).max(255).required(),

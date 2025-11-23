@@ -1,4 +1,5 @@
 import express from 'express';
+import cors from 'cors';
 import { testConnection } from './config/database.js';
 import animalRoutes from './routes/animal-routes.js';
 import cuidadoRoutes from './routes/cuidado-routes.js';
@@ -6,7 +7,9 @@ import cuidadoRoutes from './routes/cuidado-routes.js';
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-app.use(express.json());
+app
+    .use(cors())
+    .use(express.json());
 
 app.get('/', (req, res) => {
     res.status(200).send({
@@ -31,8 +34,8 @@ app.get('/db-test', async (req, res) => {
     }
 });
 
-app.use('/api/animais', animalRoutes)
-app.use('/api/cuidados', cuidadoRoutes)
+app.use('/api/animais', animalRoutes);
+app.use('/api/cuidados', cuidadoRoutes);
 app.listen(PORT, () => {
     console.log(`Express server running at http://localhost:${PORT}`);
 });

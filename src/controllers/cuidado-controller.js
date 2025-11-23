@@ -1,5 +1,5 @@
-import { query } from "../config/database.js";
-import { newCuidadoSchema } from "../schemas/cuidado-schema.js";
+import { query } from '../config/database.js';
+import { newCuidadoSchema } from '../schemas/cuidado-schema.js';
 
 export async function listarCuidados(req,res){
     try {
@@ -12,7 +12,7 @@ export async function listarCuidados(req,res){
         return res.status(500).json({
             message:'Erro interno do servidor ao listar cuidados.',
             error:error.message
-        })
+        });
     }
 }
 
@@ -21,7 +21,7 @@ export async function adicionarCuidado(req, res) {
         if (error){
             const errors = error.details.map(detail => detail.message);
             return res.status(400).json({
-                message:"Falha na validação dos dados do cuidado",
+                message:'Falha na validação dos dados do cuidado',
                 errors: errors
             });
         }
